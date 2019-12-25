@@ -1,34 +1,52 @@
 # Affairscrape
 
-This helps you scraping users from a popular German dating site for people interested in casual relationships and extramarital adventures. Not that I am interested: I just wanted to challenge myself with something a little bit trickier that would have required automation.
+This solution helps you scraping user information from a popular German dating site for people interested in casual relationships and extramarital affairs. 
 
+_(Not that I am interested: I just wanted to challenge myself with something a little bit trickier that would have required some automation)_
 
 ## Status
 
-Compared to other repositories I published on [GitHub](https://github.com/mpomar), this is more elaborated. 
-On the other hand, I am not happy with the quality of the scraped information (read: it is possible to scrape MORE data). 
+Currently (December 2019) this solution works like a charm. I will not maintain the code over time though. 
 
-As I am not fully satisfied with the final result, I might decide to refine this further in the future. 
-I always appreciate an helping hand, so do not hesitate to reach out for collaboration.
+Should the site change, the scripts might need to be updated accordingly. Feel free step in as a maintainer.
 
-In the long run I am not planning to maintain these scripts though. Feel free to step in as a maintainer if this solution is particularly close to your heart (not to mention other body parts lol)!
+## Prerequisites
 
+This solution uses Selenium/Chromedriver to login, navigate around the profiles and parse their content. In both scripts you will need to provide:
 
-## Description
+- Your credentials to login
+- Chromedriver's path (Chromedriver must be stored somewhere, locally)
 
-You will need to run the following scripts in this order:
-1) retrieveurls.py: this generates a list of the last 60 users that logged in (ideally we would prefer to interact with people who actively use the platform, not with someone who did not login for ages)
-2) parseprofiles.py: this crawls the URLs listed by retrieveurls.py and parse some information from each profile
+## Usage
+Please make sure the prerequisites are met before moving forward with the following steps: 
+1) Run retrieveurls.py: this navigates to your search page and generates a list of the last 60 users that logged in your area (I started from the assumption one wants to interact with active users, not with someone who did not login for ages) - the URLs are exported into a .csv file
+2) Run parseprofiles.py: this crawls the URLs and parse the user information from each profile
 
-Both scripts require credentials to login and chromedriver (I used Selenium for the automation).
+At this point you'll have the user details in a separate .csv file for you to analyse the data, load them into a target system or do whatever you feel like.
 
-For each user you are going to store the following information:
+For each profile the following information will be stored (of course, if available in the profile):
 
-- Username
+- ID (for later reference; also useful to load profile information into a target system)
+- Nickname
 - Age
+- Location
+- Status (single, etc.)
+- Match percentage (calculated based on the information you provided on your own profile)
 - Height
-- Status (single, married, etc.)
-- Match percentage (based on the inputs you provided in your own profile)
+- Weight
+- Figure
+- Smoker
+- Desired height (of a potential partner)
+- Desired age (of a potential partner)
+- Link to the full profile
+
+## Disclaimer
+
+Of course, you cannot know if someone will ever come to your door to kick your ass after you shagged his wife. Hence, my recommendation would be to use such sites carefully. 
+
+Should you have any troubles, well... Your problem! I only wanted to practice Selenium, I am not encouraging you to do stupid things you could potentially regret!
+
+Said so, good luck! :-P
 
 ## License
 
