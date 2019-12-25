@@ -19,7 +19,7 @@ This solution uses Selenium/Chromedriver to login, navigate around the profiles 
 
 ## Usage
 Please make sure the prerequisites are met before moving forward with the following steps: 
-1) Run retrieveurls.py: this navigates to your search page and generates a list of the last 60 users that logged in your area (I started from the assumption one wants to interact with active users, not with someone who did not login for ages) - the URLs are exported into a .csv file
+1) Run retrieveurls.py: this navigates to your search page and generates a list of the last 60 users that logged in (in your area) - I started from the assumption one wants to interact with active users - the URLs are then exported into a .csv file
 2) Run parseprofiles.py: this crawls the URLs and parse the user information from each profile
 
 At this point you'll have the user details in a separate .csv file for you to analyse the data, load them into a target system or do whatever you feel like.
