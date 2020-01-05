@@ -47,7 +47,3 @@ Of course, you cannot know if someone will ever come to your door to kick your a
 Should you have any troubles, well... Your problem! I only wanted to practice Selenium, I am not encouraging you to do stupid things you could potentially regret!
 
 Said so, good luck! :-P
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
